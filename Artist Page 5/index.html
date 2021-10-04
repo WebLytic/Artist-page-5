@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Ad Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#"><img src="./images/Payolie Logo 1.png" alt="logo"></a>
+                </div>
+                <div class="search-bar">
+                    <form>
+                        <select name="all" id="option">
+                            <option selected="selected" value="All">All</option>
+                            <option value="All">All</option>
+                            <option value="All">All</option>
+                        </select>
+                        <input type="text" placeholder="Search" name="search" class="search">
+                        <button class="search-icon" type="submit"><img src="./images/search.svg"></button>
+                    </form>
+                </div>
+                <div class="user">
+                    <div class="cart-container"><a href="#"><img src="./images/cart.svg"></a>
+                        <div class="cart-notification">6</div>
+                    </div>
+
+                    <div class="bell-container">
+                        <a href="#" class="bell"><img src="./images/bell.svg"></a>
+                        <div class="bell-circle"></div>
+                    </div>
+
+                    <a href="#"><img class="user-img" src="./images/user.svg"></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#"><img src="./images/arrowleft.svg"></a>
+                    <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Earnings</a></li>
+                        <li><a href="#">Your Products</a></li>
+                        <li><a href="#" class="active">Shop</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="Budget-section">
+            <div class="container">
+                <h3 class="budget-heading">Set your budget</h3>
+                <div class="budget-section-container">
+                    <div class="impressions">
+                        <h3>+60.000</h3>
+                        <h2>Impression</h2>
+                    </div>
+                    <div class="range-heading">
+                        <h4>Budget</h4>
+
+                        <div class="sliderContainer">
+                            <input type="range" min="0" max="1700" value="0" id="myRange" class="slider">
+                            <p><span id="value"></span></p>
+                        </div>
+                    </div>
+
+                    <div class="range--heading">
+                        <h4>Payrate</h4>
+                        <div class="slider-Container">
+                            <input type="range" min="0" max="2" value="0" step="0.1" id="my-Range" class="slider-">
+                            <p><span id="value-"></span></p>
+                        </div>
+                    </div>
+
+                    <div class="range---heading">
+                        <h4>Duration</h4>
+                        <form>
+                            <select>
+                                <option selected="selected" value="All">1 Week</option>
+                                <option value="All">2 Week</option>
+                                <option value="All">3 Week</option>
+                            </select>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <section class="section-btns-container">
+            <div class="container">
+                <div class="section-btns">
+                    <a href="#" class="section-btn-one"><img src="./images/left-btn.svg">back</a>
+                    <a href="#" class="section-btn-two">Next <img src="./images/right-btn.svg"></a>
+                </div>    
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        var slider = document.getElementById('myRange');
+        var output = document.getElementById('value');
+
+        output.innerHTML =slider.value;
+
+            slider.oninput = function() {
+                output.innerHTML = '$' + this.value;
+            }
+
+
+            slider.addEventListener("mousemove", function(){
+                var x = ((slider.value - slider.min) / (slider.max - slider.min) * 100 );
+                var color = 'linear-gradient(90deg, rgb(226, 102, 237)' + x + '%, rgb(239,239,239)' + x + '%)';
+
+                slider.style.background = color;
+            })
+
+
+
+            var sliders = document.getElementById('my-Range');
+        var outputs = document.getElementById('value-');
+
+        outputs.innerHTML =sliders.value;
+
+            sliders.oninput = function() {
+                outputs.innerHTML = '$' + this.value;
+            }
+
+
+            sliders.addEventListener("mousemove", function(){
+                var x = ((sliders.value - sliders.min) / (sliders.max - sliders.min) * 100 );
+                var color = 'linear-gradient(90deg, rgb(226, 102, 237)' + x + '%, rgb(239,239,239)' + x + '%)';
+
+                sliders.style.background = color;
+            })
+
+    </script>
+</body>
+</html>
